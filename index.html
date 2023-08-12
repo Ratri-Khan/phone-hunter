@@ -3,27 +3,45 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Monile-Hunter</title>
+    <title>Phone-Hunter</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-   <header class=" m-auto w-4/5 bg-fuchsia-950 p-5 text-center text-white text-3xl">
-     <h1>Welcome To My Mobile Hunter</h1>
-   </header>
-   <section class=" m-auto w-4/5">
-       <div>
-           <input type="text" placeholder="Search Your Phone" class="border-0 bg-fuchsia-300 my-10 p-4">
-           <button class="bg-fuchsia-950 p-4 text-white">Search</button>
-       </div> 
+ 
 
-       <div id="phones-container" class="grid grid-cols-3  gap-4">
-       </div>
+   <header class=" m-auto w-4/5 bg-fuchsia-950 p-5 text-center text-white text-3xl">
+        <h1>Welcome To  My Phone Hunter</h1>
+   </header>
+   
+   <section class=" m-auto w-4/5">
+    <!--search proccesing-->
+    <div>
+        <input type="text" id="search-field" placeholder="Search Your Phone" class="border-0 bg-fuchsia-300 my-10 p-4">
+        <button class="bg-fuchsia-950 p-4 text-white" id="search-button">Search</button>
+    </div> 
+    <!--not found massage-->
+    <div id="not-found" class="text-fuchsia-950 hidden">
+      <p>No Phone Found</p>
+    </div>
+    <!--phone container-->
+    <div id="phones-container" class="grid grid-cols-3 gap-4"></div>
+    <!--show All Button-->
+    <div>
+      <button class="bg-fuchsia-950 py-2 px-7 text-white rounded-md hidden" id="show-all">Show-ALl</button>
+    </div>
    </section>
     
 
 
 
-
+  <section class=" m-auto w-4/5 hidden" id="loader-section">
+    <button type="button" class="bg-indigo-500 ... " disabled>
+      <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+        <!-- ... -->
+      </svg>
+      Processing...
+    </button>
+</section>
     <script src="app.js"></script>
     
   </body>
