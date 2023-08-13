@@ -36,7 +36,7 @@ const displayPhones = (phones) =>{
              <img src="${phone.image}"/>
              <h3>${phone.phone_name} </h3>
              <p>${phone.brand}<p>
-             <button onclick="ShowMoreDetails('${phone.slug}')">Details</button>
+                <button onclick="ShowMoreDetails('${phone.slug}')" class="bg-fuchsia-950 text-white px-7 py-2 rounded-md" data-bs-toggle="modal" data-bs-target="#phoneDetailsMidal">Details</button>
           </div>
         `;
         phonesContainer.appendChild(phoneDiv);
@@ -68,7 +68,30 @@ const taggleSpinner = loader =>{
     else{
         loaderSection.classList.add('hidden');
     }
-
-
 }
-// loadPhones();
+
+//show Details 
+const ShowMoreDetails = (id) =>{
+    fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+    .then(res=>res.json())
+    .then(data =>displayDetails(data.data))
+}
+const displayDetails = (phone) =>{
+    console.log(phone);
+    const phoneDetailsMidalLabel = document.getElementById('phoneDetailsMidalLabel');
+    phoneDetailsMidalLabel.innerText = phone.name;
+    const modalBody = document.getElementById('modal-body');
+    modalBody.innerHTML = `
+      <div>
+        <img src='${phone.image}'>
+        <p>${phone.brand}</p>
+        <p>Storage : ${phone.mainFeatures.storage}</p>
+        <p>Memory: ${phone.mainFeatures.memory}</p>
+        <p>Slug : ${phone.slug}</p>
+        <p>WLAN : ${phone.others.WLAN}</p>
+        <p>Bluetooth : ${phone.others.Bluetooth}</p>
+        <p>ReleaseDate : ${phone.releaseDate}</p>
+      </div>
+    `
+   
+}

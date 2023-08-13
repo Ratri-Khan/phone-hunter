@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Phone-Hunter</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
   <body>
  
 
-   <header class=" m-auto w-4/5 bg-fuchsia-950 p-5 text-center text-white text-3xl">
+   <header class=" m-auto w-4/5 bg-fuchsia-950 p-3 text-center text-white text-3xl">
         <h1>Welcome To  My Phone Hunter</h1>
    </header>
    
-   <section class=" m-auto w-4/5">
+   <section class=" m-auto w-4/5 bg-slate-100">
     <!--search proccesing-->
-    <div>
-        <input type="text" id="search-field" placeholder="Search Your Phone" class="border-0 bg-fuchsia-300 my-10 p-4">
-        <button class="bg-fuchsia-950 p-4 text-white" id="search-button">Search</button>
+    <div class="text-center ">
+        <input type="text" id="search-field" placeholder="Search Your Phone" class="border-0 bg-fuchsia-300 my-10 p-2 w-96">
+        <button class="bg-fuchsia-950 p-2 text-white" id="search-button">Search</button>
     </div> 
     <!--not found massage-->
     <div id="not-found" class="text-fuchsia-950 hidden">
@@ -26,23 +27,72 @@
     <!--phone container-->
     <div id="phones-container" class="grid grid-cols-3 gap-4"></div>
     <!--show All Button-->
-    <div>
+    <div class="text-center">
       <button class="bg-fuchsia-950 py-2 px-7 text-white rounded-md hidden" id="show-all">Show-ALl</button>
     </div>
    </section>
     
 
-
+<!--for spinner-->
 
   <section class=" m-auto w-4/5 hidden" id="loader-section">
-    <button type="button" class="bg-indigo-500 ... " disabled>
-      <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-        <!-- ... -->
-      </svg>
-      Processing...
-    </button>
-</section>
+    <div class="spinner-grow text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-secondary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-info" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-dark" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  <section>
+<!--for Modal -->
+<div class="modal fade" id="phoneDetailsMidal" tabindex="-1" aria-labelledby="phoneDetailsMidalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="phoneDetailsMidalLabel"></h1>
+        
+
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
     <script src="app.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"crossorigin="anonymous"></script>
   </body>
 </html>
