@@ -1,84 +1,89 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Phone-Hunter</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  </head>
-  <body>
- 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phone-Hunter</title>
+  <!--bootstrap link-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+  .bg-image{
+  background-image: url('images/banner.jpg');
+  height: 500px;
+  }
+  .bg-color{
+    background-color: black;
+  }
+</style>
+<body>
+  <header class="bg-primary ">
+    <div class="d-flex justify-content-between px-5 py-2 align-items-center">
+       <h3 class="text-3xl text-light font-bold">Phone-Hunter  </h3>
+       <button class="text-primary border-0 text-bold py-2 px-3 bg-yellow-500 rounded fw-bold">Sing Up</button>
+    </div>
+  </header>
 
-   <header class=" m-auto w-4/5 bg-fuchsia-950 p-3 text-center text-white text-3xl">
-        <h1>Welcome To  My Phone Hunter</h1>
-   </header>
-   
-   <section class=" m-auto w-4/5 bg-slate-100">
+  <section class="bg-image">
     <!--search proccesing-->
-    <div class="text-center ">
-        <input type="text" id="search-field" placeholder="Search Your Phone" class="border-0 bg-fuchsia-300 my-10 p-2 w-96">
-        <button class="bg-fuchsia-950 p-2 text-white" id="search-button">Search</button>
-    </div> 
-    <!--not found massage-->
-    <div id="not-found" class="text-fuchsia-950 hidden">
-      <p>No Phone Found</p>
+    <div class="text-center text-white">
+      <h1>WellCome To Our Phone Hunter</h1>
+      <p>You can get here oppo,Iphone,samsung</p>
+      <input type="text" id="search-field" placeholder="Search Your Phone" class="border-0  my-10 p-2 w-4/12">
+      <button  id="search-button" class="border-0 p-2">Search</button>
     </div>
-    <!--phone container-->
-    <div id="phones-container" class="grid grid-cols-3 gap-4"></div>
-    <!--show All Button-->
-    <div class="text-center">
-      <button class="bg-fuchsia-950 py-2 px-7 text-white rounded-md hidden" id="show-all">Show-ALl</button>
+  </section>
+
+  <section class="bg-color">
+    <div id="phones-container" class=" row row-cols-1 row-cols-md-3 g-4 w-75 m-auto">
     </div>
-   </section>
-    
+ </section> 
+ <section>
+  <div id="not-found" class="d-none text-center text-danger fw-bold">
+      <p>No Phone Found . please try again</p>
+  </div>     
+</section>
 
-<!--for spinner-->
+  <!--for spinner-->
 
-  <section class=" m-auto w-4/5 hidden" id="loader-section">
+  <section class="d-none" id="loader-section">
     <div class="spinner-grow text-primary" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-grow text-secondary" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-grow text-success" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-grow text-danger" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-grow text-warning" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-grow text-info" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-grow text-dark" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
+  </section>
   <section>
-<!--for Modal -->
-<div class="modal fade" id="phoneDetailsMidal" tabindex="-1" aria-labelledby="phoneDetailsMidalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="phoneDetailsMidalLabel"></h1>
-        
-
-
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-        Close</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="phoneDetailsMidalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="phoneDetailsMidalLabel">Modal title</h1>
+          </div>
+          <div class="modal-body" id="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
   </section>
 
 
@@ -90,9 +95,10 @@
 
 
 
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
 
-
-    <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"crossorigin="anonymous"></script>
-  </body>
 </html>
