@@ -10,22 +10,20 @@
 <style>
   .bg-image{
   background-image: url('images/banner.jpg');
-  height: 500px;
-  }
+  height: 500px;}
   .bg-color{
-    background-color: black;
-  }
+    background-color: black;}
 </style>
 <body>
+  <!--navbar-->
   <header class="bg-primary ">
     <div class="d-flex justify-content-between px-5 py-2 align-items-center">
        <h3 class="text-3xl text-light font-bold">Phone-Hunter  </h3>
        <button class="text-primary border-0 text-bold py-2 px-3 bg-yellow-500 rounded fw-bold">Sing Up</button>
     </div>
   </header>
-
+  <!--search processing-->
   <section class="bg-image">
-    <!--search proccesing-->
     <div class="text-center text-white">
       <h1>WellCome To Our Phone Hunter</h1>
       <p>You can get here oppo,Iphone,samsung</p>
@@ -33,19 +31,24 @@
       <button  id="search-button" class="border-0 p-2">Search</button>
     </div>
   </section>
-
+  <!--phone container-->
   <section class="bg-color">
     <div id="phones-container" class=" row row-cols-1 row-cols-md-3 g-4 w-75 m-auto">
     </div>
  </section> 
+  <!--error massage-->
+  <section>
+    <div id="not-found" class="d-none text-center text-danger fw-bold">
+      <p>No Phone Found.please try again</p>
+    </div>     
+ </section>
+  <!--all phone showing-->
  <section>
-  <div id="not-found" class="d-none text-center text-danger fw-bold">
-      <p>No Phone Found . please try again</p>
-  </div>     
-</section>
-
+   <div class="text-center d-none" id="show-all">
+       <button id="btn-show-all" class="btn btn-primary">Show All</button>
+   </div>
+ </section>
   <!--for spinner-->
-
   <section class="d-none" id="loader-section">
     <div class="spinner-grow text-primary" role="status">
       <span class="visually-hidden"></span>
@@ -69,6 +72,7 @@
       <span class="visually-hidden"></span>
     </div>
   </section>
+  <!--for modal-->
   <section>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="phoneDetailsMidalLabel" aria-hidden="true">
       <div class="modal-dialog">
